@@ -179,7 +179,8 @@ namespace Formulário
         {
             Funcionario func = new Funcionario();
             func.setAll(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox6.Text, textBox8.Text, textBox5.Text, comboBox1.Text, Convert.ToString(numericUpDown1.Value), comboBox2.Text, textBox9.Text, textBox7.Text, sex);
-            
+            validBox(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox6.Text, textBox8.Text, textBox5.Text, comboBox1.Text, Convert.ToString(numericUpDown1.Value), comboBox2.Text, textBox9.Text, textBox7.Text, sex);
+                  
             if (func.getAllSet()) {
                 label30.Text = "";
                 FuncList.Add(func);
@@ -188,7 +189,6 @@ namespace Formulário
             } else { 
                 func = null;
                 MessageBox.Show("Alguns campos de entrada são inválidos!");
-                validBox(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox6.Text, textBox8.Text, textBox5.Text, comboBox1.Text, Convert.ToString(numericUpDown1.Value), comboBox2.Text, textBox9.Text, textBox7.Text, sex);
             }
         }
     }

@@ -14,6 +14,11 @@ namespace Formulário
             return allSet;
         }
 
+        /*private int ID() {
+            StreamReader leitor = new StreamReader();
+            string id = leitor.ReadLine();
+        }*/ 
+
         //Informações pessoais do usuário
         public string name;
         private int age;
