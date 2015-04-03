@@ -38,3 +38,11 @@ C:\Users\ThiagoZx\Desktop\Formulário_2\Formulário\obj\x86\Debug\Formulário.Pr
 C:\Users\ThiagoZx\Desktop\Formulário_2\Formulário\obj\x86\Debug\Formulário.csproj.GenerateResource.Cache
 C:\Users\ThiagoZx\Desktop\Formulário_2\Formulário\bin\Debug\Formulário.exe
 C:\Users\ThiagoZx\Desktop\Formulário_2\Formulário\bin\Debug\Formulário.pdb
+C:\Users\ThiagoZx\Documents\GitHub\2003_Formulario\Formulário\Formulário\obj\x86\Debug\Formulário.exe
+C:\Users\ThiagoZx\Documents\GitHub\2003_Formulario\Formulário\Formulário\obj\x86\Debug\Formulário.pdb
+C:\Users\ThiagoZx\Documents\GitHub\2003_Formulario\Formulário\Formulário\obj\x86\Debug\Formulário.csprojResolveAssemblyReference.cache
+C:\Users\ThiagoZx\Documents\GitHub\2003_Formulario\Formulário\Formulário\obj\x86\Debug\Formulário.Form1.resources
+C:\Users\ThiagoZx\Documents\GitHub\2003_Formulario\Formulário\Formulário\obj\x86\Debug\Formulário.Properties.Resources.resources
+C:\Users\ThiagoZx\Documents\GitHub\2003_Formulario\Formulário\Formulário\obj\x86\Debug\Formulário.csproj.GenerateResource.Cache
+C:\Users\ThiagoZx\Documents\GitHub\2003_Formulario\Formulário\Formulário\bin\Debug\Formulário.exe
+C:\Users\ThiagoZx\Documents\GitHub\2003_Formulario\Formulário\Formulário\bin\Debug\Formulário.pdb

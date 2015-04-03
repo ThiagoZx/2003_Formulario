@@ -15,10 +15,25 @@ namespace Formulário
         public Form1()
         {
             InitializeComponent();
+
+            string line;
+
+            System.IO.StreamReader file = new System.IO.StreamReader(@"WriteLines.txt");
+            
+            while ((line = file.ReadLine()) != null)
+            {
+                Funcionario f = new Funcionario();
+                f.fromString(line);
+                FuncList.Add(f);
+                listBox1.Items.Add(f.name);
+            }
+
+            file.Close();
         }
 
+
+
         List<Funcionario> FuncList = new List<Funcionario>();
-        
 
         //Checar sexo
         string sex;
@@ -190,6 +205,11 @@ namespace Formulário
                 func = null;
                 MessageBox.Show("Alguns campos de entrada são inválidos!");
             }
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
