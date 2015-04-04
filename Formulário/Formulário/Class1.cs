@@ -14,10 +14,21 @@ namespace Formulário
             return allSet;
         }
 
-        /*private int ID() {
-            StreamReader leitor = new StreamReader();
-            string id = leitor.ReadLine();
-        }*/ 
+        //Função para geração de ID
+        public void genID() {
+
+            string line;
+            System.IO.StreamReader file = new System.IO.StreamReader(@"WriteLines.txt");
+            while (file.EndOfStream == false)
+            {
+                line = file.ReadLine();
+                string[] data = line.Split(':');
+                this.ID = Convert.ToInt32(data[1]) + 1;
+            }
+
+            file.Close();
+
+        }
 
         //Informações pessoais do usuário
         public string name;
@@ -33,11 +44,12 @@ namespace Formulário
         private string ender;
         private int num;
         private string sex;
+        private int ID;
 
         //Função de envio para o banco de dados
         public string asString()
         {
-            return name + "#" + age + "#" + job + "#" + salary + "#" + email + "#" + tel + "#"+ blood + "#" + filho + "#" + estCiv + "#" + CEP + "#" + ender + "#" + num + "#" + sex + "\r\n";
+            return name + "#" + age + "#" + job + "#" + salary + "#" + email + "#" + tel + "#"+ blood + "#" + filho + "#" + estCiv + "#" + CEP + "#" + ender + "#" + num + "#" + sex + "#" + "ID:" + ID + "\r\n";
         }
 
         //Função para recuperação do banco de dados 
@@ -57,6 +69,8 @@ namespace Formulário
             ender = info[10];
             num = Convert.ToInt32(info[11]);
             sex = info[12];
+            string[] splitID = info[13].Split(':');
+            ID = Convert.ToInt32(splitID[1]);
         }
 
         //Função de verificação de dados e envio para a classe

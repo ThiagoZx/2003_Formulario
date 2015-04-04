@@ -57,8 +57,8 @@ namespace Formulário
         private void textBox4_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Back) {
-                if (textBox4.TextLength <= 3) {
-                    textBox4.Text = "R$ ";
+                if (SalaryBox.TextLength <= 3) {
+                    SalaryBox.Text = "R$ ";
                 }
             }
         }
@@ -193,23 +193,19 @@ namespace Formulário
         private void button3_Click(object sender, EventArgs e)
         {
             Funcionario func = new Funcionario();
-            func.setAll(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox6.Text, textBox8.Text, textBox5.Text, comboBox1.Text, Convert.ToString(numericUpDown1.Value), comboBox2.Text, textBox9.Text, textBox7.Text, sex);
-            validBox(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox6.Text, textBox8.Text, textBox5.Text, comboBox1.Text, Convert.ToString(numericUpDown1.Value), comboBox2.Text, textBox9.Text, textBox7.Text, sex);
+            func.setAll(NameBox.Text, AgeBox.Text, JobBox.Text, SalaryBox.Text, EmailBox.Text, NumBox.Text, TelBox.Text, BloodBox.Text, Convert.ToString(FilhoBox.Value), EstCivBox.Text, CEPBox.Text, EnderBox.Text, sex);
+            validBox(NameBox.Text, AgeBox.Text, JobBox.Text, SalaryBox.Text, EmailBox.Text, NumBox.Text, TelBox.Text, BloodBox.Text, Convert.ToString(FilhoBox.Value), EstCivBox.Text, CEPBox.Text, EnderBox.Text, sex);
                   
             if (func.getAllSet()) {
                 label30.Text = "";
                 FuncList.Add(func);
+                func.genID();
                 func.saveText();
                 listBox1.Items.Add(func.name);
             } else { 
                 func = null;
                 MessageBox.Show("Alguns campos de entrada são inválidos!");
             }
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -42,30 +42,30 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.BloodBox = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.FemaleButton = new System.Windows.Forms.RadioButton();
+            this.MaleButton = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label26 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.FilhoBox = new System.Windows.Forms.NumericUpDown();
+            this.NameBox = new System.Windows.Forms.TextBox();
+            this.AgeBox = new System.Windows.Forms.TextBox();
+            this.JobBox = new System.Windows.Forms.TextBox();
+            this.SalaryBox = new System.Windows.Forms.TextBox();
+            this.TelBox = new System.Windows.Forms.TextBox();
+            this.EmailBox = new System.Windows.Forms.TextBox();
+            this.EstCivBox = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.EnderBox = new System.Windows.Forms.TextBox();
+            this.NumBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.CEPBox = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -81,7 +81,7 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FilhoBox)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -230,11 +230,11 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.WaitOnLoad = true;
             // 
-            // comboBox1
+            // BloodBox
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.BloodBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.BloodBox.FormattingEnabled = true;
+            this.BloodBox.Items.AddRange(new object[] {
             "A+",
             "A-",
             "B-",
@@ -243,10 +243,10 @@
             "O+",
             "AB+",
             "AB-"});
-            this.comboBox1.Location = new System.Drawing.Point(114, 102);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(112, 24);
-            this.comboBox1.TabIndex = 18;
+            this.BloodBox.Location = new System.Drawing.Point(114, 102);
+            this.BloodBox.Name = "BloodBox";
+            this.BloodBox.Size = new System.Drawing.Size(112, 24);
+            this.BloodBox.TabIndex = 18;
             // 
             // label15
             // 
@@ -257,29 +257,29 @@
             this.label15.TabIndex = 19;
             this.label15.Text = "Tipo sanguíneo:";
             // 
-            // radioButton2
+            // FemaleButton
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(78, 3);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(34, 20);
-            this.radioButton2.TabIndex = 17;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "F";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.FemaleButton.AutoSize = true;
+            this.FemaleButton.Location = new System.Drawing.Point(78, 3);
+            this.FemaleButton.Name = "FemaleButton";
+            this.FemaleButton.Size = new System.Drawing.Size(34, 20);
+            this.FemaleButton.TabIndex = 17;
+            this.FemaleButton.TabStop = true;
+            this.FemaleButton.Text = "F";
+            this.FemaleButton.UseVisualStyleBackColor = true;
+            this.FemaleButton.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // radioButton1
+            // MaleButton
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(41, 3);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(37, 20);
-            this.radioButton1.TabIndex = 16;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "M";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.MaleButton.AutoSize = true;
+            this.MaleButton.Location = new System.Drawing.Point(41, 3);
+            this.MaleButton.Name = "MaleButton";
+            this.MaleButton.Size = new System.Drawing.Size(37, 20);
+            this.MaleButton.TabIndex = 16;
+            this.MaleButton.TabStop = true;
+            this.MaleButton.Text = "M";
+            this.MaleButton.UseVisualStyleBackColor = true;
+            this.MaleButton.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // label3
             // 
@@ -295,8 +295,8 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.label26);
-            this.panel1.Controls.Add(this.radioButton1);
-            this.panel1.Controls.Add(this.radioButton2);
+            this.panel1.Controls.Add(this.MaleButton);
+            this.panel1.Controls.Add(this.FemaleButton);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(448, 132);
             this.panel1.Name = "panel1";
@@ -312,73 +312,73 @@
             this.label26.Size = new System.Drawing.Size(0, 16);
             this.label26.TabIndex = 47;
             // 
-            // numericUpDown1
+            // FilhoBox
             // 
-            this.numericUpDown1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numericUpDown1.Location = new System.Drawing.Point(327, 133);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(100, 22);
-            this.numericUpDown1.TabIndex = 20;
+            this.FilhoBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.FilhoBox.Location = new System.Drawing.Point(327, 133);
+            this.FilhoBox.Name = "FilhoBox";
+            this.FilhoBox.Size = new System.Drawing.Size(100, 22);
+            this.FilhoBox.TabIndex = 20;
             // 
-            // textBox1
+            // NameBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(114, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(313, 22);
-            this.textBox1.TabIndex = 22;
+            this.NameBox.Location = new System.Drawing.Point(114, 19);
+            this.NameBox.Name = "NameBox";
+            this.NameBox.Size = new System.Drawing.Size(313, 22);
+            this.NameBox.TabIndex = 22;
             // 
-            // textBox2
+            // AgeBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(327, 47);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 23;
+            this.AgeBox.Location = new System.Drawing.Point(327, 47);
+            this.AgeBox.Name = "AgeBox";
+            this.AgeBox.Size = new System.Drawing.Size(100, 22);
+            this.AgeBox.TabIndex = 23;
             // 
-            // textBox3
+            // JobBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(114, 47);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(112, 22);
-            this.textBox3.TabIndex = 24;
+            this.JobBox.Location = new System.Drawing.Point(114, 47);
+            this.JobBox.Name = "JobBox";
+            this.JobBox.Size = new System.Drawing.Size(112, 22);
+            this.JobBox.TabIndex = 24;
             // 
-            // textBox4
+            // SalaryBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(327, 74);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 25;
-            this.textBox4.Text = "R$ ";
-            this.textBox4.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox4_KeyUp);
+            this.SalaryBox.Location = new System.Drawing.Point(327, 74);
+            this.SalaryBox.Name = "SalaryBox";
+            this.SalaryBox.Size = new System.Drawing.Size(100, 22);
+            this.SalaryBox.TabIndex = 25;
+            this.SalaryBox.Text = "R$ ";
+            this.SalaryBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox4_KeyUp);
             // 
-            // textBox5
+            // TelBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(327, 104);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 22);
-            this.textBox5.TabIndex = 26;
+            this.TelBox.Location = new System.Drawing.Point(327, 104);
+            this.TelBox.Name = "TelBox";
+            this.TelBox.Size = new System.Drawing.Size(100, 22);
+            this.TelBox.TabIndex = 26;
             // 
-            // textBox6
+            // EmailBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(114, 74);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(112, 22);
-            this.textBox6.TabIndex = 27;
+            this.EmailBox.Location = new System.Drawing.Point(114, 74);
+            this.EmailBox.Name = "EmailBox";
+            this.EmailBox.Size = new System.Drawing.Size(112, 22);
+            this.EmailBox.TabIndex = 27;
             // 
-            // comboBox2
+            // EstCivBox
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.EstCivBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.EstCivBox.FormattingEnabled = true;
+            this.EstCivBox.Items.AddRange(new object[] {
             "Casado(a)",
             "Solteiro(a)",
             "Divorciado(a)",
             "Viúvo(a)",
             "Noivo(a)"});
-            this.comboBox2.Location = new System.Drawing.Point(114, 132);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(112, 24);
-            this.comboBox2.TabIndex = 28;
-            this.comboBox2.UseWaitCursor = true;
+            this.EstCivBox.Location = new System.Drawing.Point(114, 132);
+            this.EstCivBox.Name = "EstCivBox";
+            this.EstCivBox.Size = new System.Drawing.Size(112, 24);
+            this.EstCivBox.TabIndex = 28;
+            this.EstCivBox.UseWaitCursor = true;
             // 
             // button1
             // 
@@ -410,19 +410,19 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // textBox7
+            // EnderBox
             // 
-            this.textBox7.Location = new System.Drawing.Point(114, 162);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(313, 22);
-            this.textBox7.TabIndex = 32;
+            this.EnderBox.Location = new System.Drawing.Point(114, 162);
+            this.EnderBox.Name = "EnderBox";
+            this.EnderBox.Size = new System.Drawing.Size(313, 22);
+            this.EnderBox.TabIndex = 32;
             // 
-            // textBox8
+            // NumBox
             // 
-            this.textBox8.Location = new System.Drawing.Point(114, 190);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(112, 22);
-            this.textBox8.TabIndex = 33;
+            this.NumBox.Location = new System.Drawing.Point(114, 190);
+            this.NumBox.Name = "NumBox";
+            this.NumBox.Size = new System.Drawing.Size(112, 22);
+            this.NumBox.TabIndex = 33;
             // 
             // label1
             // 
@@ -457,12 +457,12 @@
             this.label17.TabIndex = 37;
             this.label17.Text = "CEP:";
             // 
-            // textBox9
+            // CEPBox
             // 
-            this.textBox9.Location = new System.Drawing.Point(327, 190);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 22);
-            this.textBox9.TabIndex = 38;
+            this.CEPBox.Location = new System.Drawing.Point(327, 190);
+            this.CEPBox.Name = "CEPBox";
+            this.CEPBox.Size = new System.Drawing.Size(100, 22);
+            this.CEPBox.TabIndex = 38;
             // 
             // label18
             // 
@@ -583,7 +583,6 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(145, 228);
             this.listBox1.TabIndex = 1;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // Form1
             // 
@@ -603,26 +602,26 @@
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.CEPBox);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.NumBox);
+            this.Controls.Add(this.EnderBox);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.EstCivBox);
+            this.Controls.Add(this.EmailBox);
+            this.Controls.Add(this.TelBox);
+            this.Controls.Add(this.SalaryBox);
+            this.Controls.Add(this.JobBox);
+            this.Controls.Add(this.AgeBox);
+            this.Controls.Add(this.NameBox);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.FilhoBox);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.BloodBox);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
@@ -645,7 +644,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FilhoBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -666,29 +665,29 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox BloodBox;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton FemaleButton;
+        private System.Windows.Forms.RadioButton MaleButton;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.NumericUpDown FilhoBox;
+        private System.Windows.Forms.TextBox NameBox;
+        private System.Windows.Forms.TextBox AgeBox;
+        private System.Windows.Forms.TextBox JobBox;
+        private System.Windows.Forms.TextBox SalaryBox;
+        private System.Windows.Forms.TextBox TelBox;
+        private System.Windows.Forms.TextBox EmailBox;
+        private System.Windows.Forms.ComboBox EstCivBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox EnderBox;
+        private System.Windows.Forms.TextBox NumBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox CEPBox;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
