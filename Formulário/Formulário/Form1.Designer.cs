@@ -58,7 +58,7 @@
             this.EmailBox = new System.Windows.Forms.TextBox();
             this.EstCivBox = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Excluir = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.EnderBox = new System.Windows.Forms.TextBox();
             this.NumBox = new System.Windows.Forms.TextBox();
@@ -78,7 +78,7 @@
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.Funcionários = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FilhoBox)).BeginInit();
@@ -390,15 +390,16 @@
             this.button1.Text = "Editar";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // Excluir
             // 
-            this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(220, 227);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 23);
-            this.button2.TabIndex = 30;
-            this.button2.Text = "Excluir";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Excluir.Enabled = false;
+            this.Excluir.Location = new System.Drawing.Point(220, 227);
+            this.Excluir.Name = "Excluir";
+            this.Excluir.Size = new System.Drawing.Size(112, 23);
+            this.Excluir.TabIndex = 30;
+            this.Excluir.Text = "Excluir";
+            this.Excluir.UseVisualStyleBackColor = true;
+            this.Excluir.Click += new System.EventHandler(this.Excluir_Click);
             // 
             // button3
             // 
@@ -572,17 +573,18 @@
             this.label30.Size = new System.Drawing.Size(0, 16);
             this.label30.TabIndex = 51;
             // 
-            // listBox1
+            // Funcionários
             // 
-            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.Funcionários.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(584, 22);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(145, 228);
-            this.listBox1.TabIndex = 1;
+            this.Funcionários.FormattingEnabled = true;
+            this.Funcionários.ItemHeight = 16;
+            this.Funcionários.Location = new System.Drawing.Point(584, 22);
+            this.Funcionários.Margin = new System.Windows.Forms.Padding(4);
+            this.Funcionários.Name = "Funcionários";
+            this.Funcionários.Size = new System.Drawing.Size(145, 228);
+            this.Funcionários.TabIndex = 1;
+            this.Funcionários.SelectedIndexChanged += new System.EventHandler(this.Funcionários_SelectedIndexChanged);
             // 
             // Form1
             // 
@@ -609,7 +611,7 @@
             this.Controls.Add(this.NumBox);
             this.Controls.Add(this.EnderBox);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.Excluir);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.EstCivBox);
             this.Controls.Add(this.EmailBox);
@@ -635,7 +637,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.Funcionários);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -680,7 +682,7 @@
         private System.Windows.Forms.TextBox EmailBox;
         private System.Windows.Forms.ComboBox EstCivBox;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Excluir;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox EnderBox;
         private System.Windows.Forms.TextBox NumBox;
@@ -701,7 +703,7 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox Funcionários;
     }
 }
 

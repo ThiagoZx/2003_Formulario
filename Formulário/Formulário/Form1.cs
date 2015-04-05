@@ -18,14 +18,14 @@ namespace Formulário
 
             string line;
 
-            System.IO.StreamReader file = new System.IO.StreamReader(@"WriteLines.txt");
+            System.IO.StreamReader file = new System.IO.StreamReader(@"UserFiles.txt");
             
             while ((line = file.ReadLine()) != null)
             {
                 Funcionario f = new Funcionario();
                 f.fromString(line);
                 FuncList.Add(f);
-                listBox1.Items.Add(f.name);
+                Funcionários.Items.Add(f.getName() + "                                              ID:" + f.getID());
             }
 
             file.Close();
@@ -201,11 +201,52 @@ namespace Formulário
                 FuncList.Add(func);
                 func.genID();
                 func.saveText();
-                listBox1.Items.Add(func.name);
+                Funcionários.Items.Add(func.getName() + "                                              ID:" + func.getID());
             } else { 
                 func = null;
                 MessageBox.Show("Alguns campos de entrada são inválidos!");
             }
+        }
+
+        //Função para escolha de 
+        private void Funcionários_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Excluir.Enabled = true;
+        }
+
+
+        //Função para deletar informações de usuário
+        public void deleteUser(string userID)
+        {
+            string[] user = userID.Split(':');
+            string ID = user[user.Length - 1];
+            string line;
+
+            System.IO.StreamReader reader = new System.IO.StreamReader(@"UserFiles.txt");
+            System.IO.StreamWriter writer = new System.IO.StreamWriter(@"TempFiles.txt");
+
+            while ((line = reader.ReadLine()) != null) {
+                //string line = reader.ReadLine();
+                if (!line.Contains("ID:" + ID)) {
+                    writer.WriteLine(line);
+                }
+            }
+
+            reader.Close();
+            writer.Close();
+
+            if (File.Exists(@"TempFiles.txt"))
+            {
+                File.Delete(@"UserFiles.txt");
+                File.Move(@"TempFiles.txt", @"UserFiles.txt");
+            }
+
+        }
+
+        private void Excluir_Click(object sender, EventArgs e)
+        {
+            deleteUser(Convert.ToString(Funcionários.SelectedItem));
+            Funcionários.Items.Remove(Funcionários.SelectedItem);
         }
     }
 }

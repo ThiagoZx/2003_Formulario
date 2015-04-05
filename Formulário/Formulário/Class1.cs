@@ -18,8 +18,8 @@ namespace Formulário
         public void genID() {
 
             string line;
-            System.IO.StreamReader file = new System.IO.StreamReader(@"WriteLines.txt");
-            while (file.EndOfStream == false)
+            System.IO.StreamReader file = new System.IO.StreamReader(@"UserFiles.txt");
+            while (!file.EndOfStream)
             {
                 line = file.ReadLine();
                 string[] data = line.Split(':');
@@ -30,8 +30,16 @@ namespace Formulário
 
         }
 
+        public string getName() {
+            return this.name;
+        }
+
+        public int getID() {
+            return this.ID;
+        }
+
         //Informações pessoais do usuário
-        public string name;
+        private string name;
         private int age;
         private string job;
         private string salary;
@@ -156,7 +164,7 @@ namespace Formulário
         public void saveText() 
         {
             string save = asString();
-            System.IO.File.AppendAllText(@"WriteLines.txt", save);
+            System.IO.File.AppendAllText(@"UserFiles.txt", save);
         }
     }
 }
