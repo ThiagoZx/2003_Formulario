@@ -55,9 +55,16 @@ namespace Formulário
         private int ID;
 
         //Função de envio para o banco de dados
-        public string asString()
+        public string asString(bool edit)
         {
-            return name + "#" + age + "#" + job + "#" + salary + "#" + email + "#" + tel + "#"+ blood + "#" + filho + "#" + estCiv + "#" + CEP + "#" + ender + "#" + num + "#" + sex + "#" + "ID:" + ID + "\r\n";
+            if (!edit)
+            {
+                return name + "#" + age + "#" + job + "#" + salary + "#" + email + "#" + tel + "#" + blood + "#" + filho + "#" + estCiv + "#" + CEP + "#" + ender + "#" + num + "#" + sex + "#" + "ID:" + ID + "\r\n";
+            }
+            else 
+            {
+                return name + "#" + age + "#" + job + "#" + salary + "#" + email + "#" + tel + "#" + blood + "#" + filho + "#" + estCiv + "#" + CEP + "#" + ender + "#" + num + "#" + sex + "#" + "ID:" + ID;            
+            }
         }
 
         //Função para recuperação do banco de dados 
@@ -163,7 +170,7 @@ namespace Formulário
         //Função para salvar informações no banco de dados
         public void saveText() 
         {
-            string save = asString();
+            string save = asString(false);
             System.IO.File.AppendAllText(@"UserFiles.txt", save);
         }
     }

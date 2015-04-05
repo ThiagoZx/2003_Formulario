@@ -57,7 +57,7 @@
             this.TelBox = new System.Windows.Forms.TextBox();
             this.EmailBox = new System.Windows.Forms.TextBox();
             this.EstCivBox = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Editar = new System.Windows.Forms.Button();
             this.Excluir = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.EnderBox = new System.Windows.Forms.TextBox();
@@ -79,6 +79,7 @@
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.Funcionários = new System.Windows.Forms.ListBox();
+            this.Unfocus = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FilhoBox)).BeginInit();
@@ -294,13 +295,14 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.Unfocus);
             this.panel1.Controls.Add(this.label26);
             this.panel1.Controls.Add(this.MaleButton);
             this.panel1.Controls.Add(this.FemaleButton);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(448, 132);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(129, 23);
+            this.panel1.Size = new System.Drawing.Size(129, 24);
             this.panel1.TabIndex = 21;
             // 
             // label26
@@ -380,15 +382,16 @@
             this.EstCivBox.TabIndex = 28;
             this.EstCivBox.UseWaitCursor = true;
             // 
-            // button1
+            // Editar
             // 
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(338, 227);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 23);
-            this.button1.TabIndex = 29;
-            this.button1.Text = "Editar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Editar.Enabled = false;
+            this.Editar.Location = new System.Drawing.Point(338, 227);
+            this.Editar.Name = "Editar";
+            this.Editar.Size = new System.Drawing.Size(112, 23);
+            this.Editar.TabIndex = 29;
+            this.Editar.Text = "Editar";
+            this.Editar.UseVisualStyleBackColor = true;
+            this.Editar.Click += new System.EventHandler(this.Editar_Click);
             // 
             // Excluir
             // 
@@ -586,6 +589,18 @@
             this.Funcionários.TabIndex = 1;
             this.Funcionários.SelectedIndexChanged += new System.EventHandler(this.Funcionários_SelectedIndexChanged);
             // 
+            // Unfocus
+            // 
+            this.Unfocus.AutoSize = true;
+            this.Unfocus.Location = new System.Drawing.Point(33, 38);
+            this.Unfocus.Name = "Unfocus";
+            this.Unfocus.Size = new System.Drawing.Size(75, 20);
+            this.Unfocus.TabIndex = 48;
+            this.Unfocus.TabStop = true;
+            this.Unfocus.Text = "Unfocus";
+            this.Unfocus.UseVisualStyleBackColor = true;
+            this.Unfocus.CheckedChanged += new System.EventHandler(this.Unfocus_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -612,7 +627,7 @@
             this.Controls.Add(this.EnderBox);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.Excluir);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Editar);
             this.Controls.Add(this.EstCivBox);
             this.Controls.Add(this.EmailBox);
             this.Controls.Add(this.TelBox);
@@ -681,7 +696,7 @@
         private System.Windows.Forms.TextBox TelBox;
         private System.Windows.Forms.TextBox EmailBox;
         private System.Windows.Forms.ComboBox EstCivBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Editar;
         private System.Windows.Forms.Button Excluir;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox EnderBox;
@@ -704,6 +719,7 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.ListBox Funcionários;
+        private System.Windows.Forms.RadioButton Unfocus;
     }
 }
 

@@ -31,8 +31,6 @@ namespace Formulário
             file.Close();
         }
 
-
-
         List<Funcionario> FuncList = new List<Funcionario>();
 
         //Checar sexo
@@ -50,6 +48,11 @@ namespace Formulário
         {
             pictureBox1.Image = Formulário.Properties.Resources.Icon_femaleAvatar;
             sex = "Feminino";
+        }
+
+        private void Unfocus_CheckedChanged(object sender, EventArgs e)
+        {
+            pictureBox1.Image = Formulário.Properties.Resources.Icon_x;
         }
 
         //Função de alteração do salário
@@ -87,7 +90,7 @@ namespace Formulário
                 label30.Text = "* Campo Inválido";
             }
 
-            if (job != "")
+            if (job != "") 
             {
                 label19.Text = "";
             }
@@ -188,35 +191,115 @@ namespace Formulário
             }
         }
 
-        //Função do Botão de adicionar
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Funcionario func = new Funcionario();
-            func.setAll(NameBox.Text, AgeBox.Text, JobBox.Text, SalaryBox.Text, EmailBox.Text, NumBox.Text, TelBox.Text, BloodBox.Text, Convert.ToString(FilhoBox.Value), EstCivBox.Text, CEPBox.Text, EnderBox.Text, sex);
-            validBox(NameBox.Text, AgeBox.Text, JobBox.Text, SalaryBox.Text, EmailBox.Text, NumBox.Text, TelBox.Text, BloodBox.Text, Convert.ToString(FilhoBox.Value), EstCivBox.Text, CEPBox.Text, EnderBox.Text, sex);
-                  
-            if (func.getAllSet()) {
-                label30.Text = "";
-                FuncList.Add(func);
-                func.genID();
-                func.saveText();
-                Funcionários.Items.Add(func.getName() + "                                              ID:" + func.getID());
-            } else { 
-                func = null;
-                MessageBox.Show("Alguns campos de entrada são inválidos!");
-            }
-        }
-
-        //Função para escolha de 
+        //Função para escolha de usuarios
         private void Funcionários_SelectedIndexChanged(object sender, EventArgs e)
         {
             Excluir.Enabled = true;
+            if (Funcionários.Items.Count == 0) {
+                Excluir.Enabled = false;
+            }
+
+            Editar.Enabled = true;
         }
 
+        //Função para limpar caixas de texto
+        private void clearAll() 
+        {
+            NameBox.Text = null;
+            AgeBox.Text = null;
+            JobBox.Text = null;
+            SalaryBox.Text = "R$ ";
+            EmailBox.Text = null;
+            TelBox.Text = null;
+            BloodBox.Text = null;
+            FilhoBox.Text = "0";
+            EstCivBox.Text = null;
+            CEPBox.Text = null;
+            EnderBox.Text = null;
+            NumBox.Text = null;
+            sex = null;
+            pictureBox1.Image = Formulário.Properties.Resources.Icon_x;
+            Unfocus.Focus();
+        }
+
+        //Funções para alterar os dados de um usuário
+        public void toTextBox(string data)
+        {
+            string[] info = data.Split('#');
+            NameBox.Text = info[0];
+            AgeBox.Text = info[1];
+            JobBox.Text = info[2];
+            SalaryBox.Text = info[3];
+            EmailBox.Text = info[4];
+            TelBox.Text = info[5];
+            BloodBox.Text = info[6];
+            FilhoBox.Text = info[7];
+            EstCivBox.Text = info[8];
+            CEPBox.Text = info[9];
+            EnderBox.Text = info[10];
+            NumBox.Text = info[11];
+            sex = info[12];
+            if (sex == "Masculino")
+            {
+                MaleButton.Focus();
+            }
+            else 
+            {
+                FemaleButton.Focus();
+            }
+        }
+
+        private void selectUser(string userID) 
+        {
+            string[] user = userID.Split(':');
+            string ID = user[user.Length - 1];
+            string line;
+
+            System.IO.StreamReader reader = new System.IO.StreamReader(@"UserFiles.txt");
+
+            while ((line = reader.ReadLine()) != null)
+            {
+                if (line.Contains("ID:" + ID))
+                {
+                    toTextBox(line);
+                }
+            }
+
+            reader.Close();
+        }
+
+        private void saveChange(string userData, int ID) 
+        {
+            string line;
+
+            System.IO.StreamReader reader = new System.IO.StreamReader(@"UserFiles.txt");
+            System.IO.StreamWriter writer = new System.IO.StreamWriter(@"TempFiles.txt");
+
+            while ((line = reader.ReadLine()) != null)
+            {
+                if (line.Contains("ID:" + ID))
+                {
+                    writer.WriteLine(userData);
+                }
+                else 
+                {
+                    writer.WriteLine(line);
+                }
+            }
+
+            reader.Close();
+            writer.Close();
+
+            if (File.Exists(@"TempFiles.txt"))
+            {
+                File.Delete(@"UserFiles.txt");
+                File.Move(@"TempFiles.txt", @"UserFiles.txt");
+            }
+   
+        }
 
         //Função para deletar informações de usuário
-        public void deleteUser(string userID)
+        private void deleteUser(string userID)
         {
             string[] user = userID.Split(':');
             string ID = user[user.Length - 1];
@@ -226,7 +309,6 @@ namespace Formulário
             System.IO.StreamWriter writer = new System.IO.StreamWriter(@"TempFiles.txt");
 
             while ((line = reader.ReadLine()) != null) {
-                //string line = reader.ReadLine();
                 if (!line.Contains("ID:" + ID)) {
                     writer.WriteLine(line);
                 }
@@ -243,10 +325,87 @@ namespace Formulário
 
         }
 
+        //Função do Botão de adicionar
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (button3.Text == "Adicionar") 
+            {
+                Funcionario func = new Funcionario();
+                func.setAll(NameBox.Text, AgeBox.Text, JobBox.Text, SalaryBox.Text, EmailBox.Text, NumBox.Text, TelBox.Text, BloodBox.Text, Convert.ToString(FilhoBox.Value), EstCivBox.Text, CEPBox.Text, EnderBox.Text, sex);
+                validBox(NameBox.Text, AgeBox.Text, JobBox.Text, SalaryBox.Text, EmailBox.Text, NumBox.Text, TelBox.Text, BloodBox.Text, Convert.ToString(FilhoBox.Value), EstCivBox.Text, CEPBox.Text, EnderBox.Text, sex);
+
+                if (func.getAllSet())
+                {
+                    label30.Text = "";
+                    FuncList.Add(func);
+                    func.genID();
+                    func.saveText();
+                    Funcionários.Items.Add(func.getName() + "                                              ID:" + func.getID());
+                    clearAll();
+                }
+                else
+                {
+                    func = null;
+                    MessageBox.Show("Alguns campos de entrada são inválidos!");
+                }
+            }
+            else if (button3.Text == "Salvar") 
+            {
+                string[] user = Convert.ToString(Funcionários.SelectedItem).Split(':');
+                int ID = Convert.ToInt32(user[user.Length - 1]);
+
+                foreach(Funcionario f in FuncList ) {
+                    int fID = f.getID();
+                    if (fID == ID) 
+                    {
+                        f.setAll(NameBox.Text, AgeBox.Text, JobBox.Text, SalaryBox.Text, EmailBox.Text, NumBox.Text, TelBox.Text, BloodBox.Text, Convert.ToString(FilhoBox.Value), EstCivBox.Text, CEPBox.Text, EnderBox.Text, sex);
+                        validBox(NameBox.Text, AgeBox.Text, JobBox.Text, SalaryBox.Text, EmailBox.Text, NumBox.Text, TelBox.Text, BloodBox.Text, Convert.ToString(FilhoBox.Value), EstCivBox.Text, CEPBox.Text, EnderBox.Text, sex);
+
+                        if (f.getAllSet())
+                        {
+                            label30.Text = "";
+                            string data = f.asString(true);
+                            saveChange(data, f.getID());
+                            button3.Text = "Adicionar";
+                            Editar.Text = "Editar";
+                            Editar.Enabled = false;
+                            Funcionários.Enabled = true;
+                            clearAll();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Alguns campos de entrada são inválidos!");
+                        }
+                    }
+                }
+            }
+            
+        }
+
+        //Função do Botão excluir
         private void Excluir_Click(object sender, EventArgs e)
         {
             deleteUser(Convert.ToString(Funcionários.SelectedItem));
             Funcionários.Items.Remove(Funcionários.SelectedItem);
+            Excluir.Enabled = false;
+        }
+
+        //Função do botão editar
+        private void Editar_Click(object sender, EventArgs e)
+        {
+            
+            if (Editar.Text == "Editar") {
+                button3.Text = "Salvar";
+                Editar.Text = "Cancelar";
+                Excluir.Enabled = false;
+                selectUser(Convert.ToString(Funcionários.SelectedItem));
+                Funcionários.Enabled = false;
+            }
+            else if (Editar.Text == "Cancelar") {
+                button3.Text = "Adicionar";
+                Editar.Text = "Editar";
+                Funcionários.Enabled = true;
+            }
         }
     }
 }
