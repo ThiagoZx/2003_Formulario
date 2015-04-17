@@ -37,10 +37,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BloodBox = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -48,13 +44,13 @@
             this.MaleButton = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Unfocus = new System.Windows.Forms.RadioButton();
             this.label26 = new System.Windows.Forms.Label();
             this.FilhoBox = new System.Windows.Forms.NumericUpDown();
             this.NameBox = new System.Windows.Forms.TextBox();
             this.AgeBox = new System.Windows.Forms.TextBox();
             this.JobBox = new System.Windows.Forms.TextBox();
             this.SalaryBox = new System.Windows.Forms.TextBox();
-            this.TelBox = new System.Windows.Forms.TextBox();
             this.EmailBox = new System.Windows.Forms.TextBox();
             this.EstCivBox = new System.Windows.Forms.ComboBox();
             this.Editar = new System.Windows.Forms.Button();
@@ -79,7 +75,7 @@
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.Funcionários = new System.Windows.Forms.ListBox();
-            this.Unfocus = new System.Windows.Forms.RadioButton();
+            this.TelBox = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FilhoBox)).BeginInit();
@@ -173,50 +169,6 @@
             this.label10.TabIndex = 10;
             this.label10.Text = "Email:";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(56, 484);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(36, 16);
-            this.label11.TabIndex = 11;
-            this.label11.Text = "Rua:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(135, 484);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(25, 16);
-            this.label12.TabIndex = 12;
-            this.label12.Text = "N°:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(221, 465);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(38, 16);
-            this.label13.TabIndex = 13;
-            this.label13.Text = "CEP:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(56, 442);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(67, 16);
-            this.label14.TabIndex = 14;
-            this.label14.Text = "Endereço";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -305,6 +257,18 @@
             this.panel1.Size = new System.Drawing.Size(129, 24);
             this.panel1.TabIndex = 21;
             // 
+            // Unfocus
+            // 
+            this.Unfocus.AutoSize = true;
+            this.Unfocus.Location = new System.Drawing.Point(33, 38);
+            this.Unfocus.Name = "Unfocus";
+            this.Unfocus.Size = new System.Drawing.Size(75, 20);
+            this.Unfocus.TabIndex = 48;
+            this.Unfocus.TabStop = true;
+            this.Unfocus.Text = "Unfocus";
+            this.Unfocus.UseVisualStyleBackColor = true;
+            this.Unfocus.CheckedChanged += new System.EventHandler(this.Unfocus_CheckedChanged);
+            // 
             // label26
             // 
             this.label26.AutoSize = true;
@@ -319,22 +283,24 @@
             this.FilhoBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.FilhoBox.Location = new System.Drawing.Point(327, 133);
             this.FilhoBox.Name = "FilhoBox";
-            this.FilhoBox.Size = new System.Drawing.Size(100, 22);
+            this.FilhoBox.Size = new System.Drawing.Size(103, 22);
             this.FilhoBox.TabIndex = 20;
             // 
             // NameBox
             // 
             this.NameBox.Location = new System.Drawing.Point(114, 19);
             this.NameBox.Name = "NameBox";
-            this.NameBox.Size = new System.Drawing.Size(313, 22);
+            this.NameBox.Size = new System.Drawing.Size(316, 22);
             this.NameBox.TabIndex = 22;
             // 
             // AgeBox
             // 
             this.AgeBox.Location = new System.Drawing.Point(327, 47);
+            this.AgeBox.MaxLength = 3;
             this.AgeBox.Name = "AgeBox";
-            this.AgeBox.Size = new System.Drawing.Size(100, 22);
+            this.AgeBox.Size = new System.Drawing.Size(103, 22);
             this.AgeBox.TabIndex = 23;
+            this.AgeBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumbersOnly);
             // 
             // JobBox
             // 
@@ -347,17 +313,10 @@
             // 
             this.SalaryBox.Location = new System.Drawing.Point(327, 74);
             this.SalaryBox.Name = "SalaryBox";
-            this.SalaryBox.Size = new System.Drawing.Size(100, 22);
+            this.SalaryBox.Size = new System.Drawing.Size(103, 22);
             this.SalaryBox.TabIndex = 25;
             this.SalaryBox.Text = "R$ ";
             this.SalaryBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox4_KeyUp);
-            // 
-            // TelBox
-            // 
-            this.TelBox.Location = new System.Drawing.Point(327, 104);
-            this.TelBox.Name = "TelBox";
-            this.TelBox.Size = new System.Drawing.Size(100, 22);
-            this.TelBox.TabIndex = 26;
             // 
             // EmailBox
             // 
@@ -418,7 +377,7 @@
             // 
             this.EnderBox.Location = new System.Drawing.Point(114, 162);
             this.EnderBox.Name = "EnderBox";
-            this.EnderBox.Size = new System.Drawing.Size(313, 22);
+            this.EnderBox.Size = new System.Drawing.Size(316, 22);
             this.EnderBox.TabIndex = 32;
             // 
             // NumBox
@@ -464,9 +423,12 @@
             // CEPBox
             // 
             this.CEPBox.Location = new System.Drawing.Point(327, 190);
+            this.CEPBox.MaxLength = 9;
             this.CEPBox.Name = "CEPBox";
-            this.CEPBox.Size = new System.Drawing.Size(100, 22);
+            this.CEPBox.Size = new System.Drawing.Size(103, 22);
             this.CEPBox.TabIndex = 38;
+            this.CEPBox.TextChanged += new System.EventHandler(this.CEPBox_TextChanged);
+            this.CEPBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumbersOnly);
             // 
             // label18
             // 
@@ -578,8 +540,8 @@
             // 
             // Funcionários
             // 
-            this.Funcionários.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.Funcionários.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Funcionários.FormattingEnabled = true;
             this.Funcionários.ItemHeight = 16;
             this.Funcionários.Location = new System.Drawing.Point(584, 22);
@@ -589,24 +551,23 @@
             this.Funcionários.TabIndex = 1;
             this.Funcionários.SelectedIndexChanged += new System.EventHandler(this.Funcionários_SelectedIndexChanged);
             // 
-            // Unfocus
+            // TelBox
             // 
-            this.Unfocus.AutoSize = true;
-            this.Unfocus.Location = new System.Drawing.Point(33, 38);
-            this.Unfocus.Name = "Unfocus";
-            this.Unfocus.Size = new System.Drawing.Size(75, 20);
-            this.Unfocus.TabIndex = 48;
-            this.Unfocus.TabStop = true;
-            this.Unfocus.Text = "Unfocus";
-            this.Unfocus.UseVisualStyleBackColor = true;
-            this.Unfocus.CheckedChanged += new System.EventHandler(this.Unfocus_CheckedChanged);
+            this.TelBox.BackColor = System.Drawing.Color.White;
+            this.TelBox.BeepOnError = true;
+            this.TelBox.Location = new System.Drawing.Point(327, 104);
+            this.TelBox.Mask = "(00) 90000-0000";
+            this.TelBox.Name = "TelBox";
+            this.TelBox.Size = new System.Drawing.Size(103, 22);
+            this.TelBox.TabIndex = 52;
+            this.TelBox.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(742, 260);
+            this.ClientSize = new System.Drawing.Size(742, 263);
             this.Controls.Add(this.label30);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.label28);
@@ -640,10 +601,6 @@
             this.Controls.Add(this.label15);
             this.Controls.Add(this.BloodBox);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -655,7 +612,10 @@
             this.Controls.Add(this.Funcionários);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Formulário de Cadastro";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -677,10 +637,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox BloodBox;
         private System.Windows.Forms.Label label15;
@@ -693,7 +649,6 @@
         private System.Windows.Forms.TextBox AgeBox;
         private System.Windows.Forms.TextBox JobBox;
         private System.Windows.Forms.TextBox SalaryBox;
-        private System.Windows.Forms.TextBox TelBox;
         private System.Windows.Forms.TextBox EmailBox;
         private System.Windows.Forms.ComboBox EstCivBox;
         private System.Windows.Forms.Button Editar;
@@ -720,6 +675,7 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.ListBox Funcionários;
         private System.Windows.Forms.RadioButton Unfocus;
+        private System.Windows.Forms.MaskedTextBox TelBox;
     }
 }
 

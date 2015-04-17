@@ -53,6 +53,7 @@ namespace Formulário
         private void Unfocus_CheckedChanged(object sender, EventArgs e)
         {
             pictureBox1.Image = Formulário.Properties.Resources.Icon_x;
+            sex = null;
         }
 
         //Função de alteração do salário
@@ -195,11 +196,13 @@ namespace Formulário
         private void Funcionários_SelectedIndexChanged(object sender, EventArgs e)
         {
             Excluir.Enabled = true;
+            Editar.Enabled = true;
+
             if (Funcionários.Items.Count == 0) {
                 Excluir.Enabled = false;
+                Editar.Enabled = false;
             }
 
-            Editar.Enabled = true;
         }
 
         //Função para limpar caixas de texto
@@ -404,7 +407,23 @@ namespace Formulário
             else if (Editar.Text == "Cancelar") {
                 button3.Text = "Adicionar";
                 Editar.Text = "Editar";
+                Editar.Enabled = false;
                 Funcionários.Enabled = true;
+                clearAll();
+            }
+        }
+
+        //Mask para o CEP
+        private void CEPBox_TextChanged(object sender, EventArgs e) {
+            if (!(CEPBox.Text.Contains("-"))) {
+                if (CEPBox.Text.Length == 8) CEPBox.Text = CEPBox.Text.Insert(5, "-");             
+            }
+        }
+
+        //Função que limita a números
+        public void NumbersOnly(object sender, KeyPressEventArgs e) {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) {
+                e.Handled = true;
             }
         }
     }
